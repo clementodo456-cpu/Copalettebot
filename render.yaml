@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: img2basebot
+    env: python
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: MAX_FILE_SIZE_MB
+        value: "20"
